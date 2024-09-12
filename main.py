@@ -6,7 +6,7 @@ bot = telebot.TeleBot(config.api_token)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    msg = bot.send_message(message.chat.id, 'Hello! This bot lets you to convert different currencies.\nEnter the currency you want to cinvert from:')
+    msg = bot.send_message(message.chat.id, 'Hello! This bot lets you to convert different currencies.\nEnter the currency you want to convert from:')
     bot.register_next_step_handler(msg, get_first_currency)
 
 def get_first_currency(message):
